@@ -19,6 +19,11 @@ namespace WebGentle.BookStore7
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //runtime compilation ke liye
+
+#if DEBUG
+            services.AddRazorPages().AddRazorRuntimeCompilation();
+#endif
         }
 
         // This method gets called by the runtime. Use this method to confi gure the HTTP request pipeline.
